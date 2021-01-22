@@ -1,0 +1,49 @@
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 42.45    0.000059          59         1           mknod
+ 16.55    0.000023           3         7           read
+ 15.11    0.000021           2        10           close
+ 12.23    0.000017           2         8           fstat
+  5.04    0.000007           0        27           mmap
+  4.32    0.000006           3         2         2 access
+  4.32    0.000006           0         8           openat
+  0.00    0.000000           0         9           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         2           rt_sigaction
+  0.00    0.000000           0         1           rt_sigprocmask
+  0.00    0.000000           0         8           pread64
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         2         2 statfs
+  0.00    0.000000           0         2         1 arch_prctl
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000139                    95         5 total
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0.00    0.000000           0         7           read
+  0.00    0.000000           0        10           close
+  0.00    0.000000           0         8           fstat
+  0.00    0.000000           0        27           mmap
+  0.00    0.000000           0         9           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         2           rt_sigaction
+  0.00    0.000000           0         1           rt_sigprocmask
+  0.00    0.000000           0         8           pread64
+  0.00    0.000000           0         2         2 access
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           mknod
+  0.00    0.000000           0         2         2 statfs
+  0.00    0.000000           0         2         1 arch_prctl
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         8           openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000000                    95         5 total
+
+
+The first call is for MKFIFO and second for MKNOD. As we can see MKFIFO takes more time than MKNOD. Hence MKNOD is better.
